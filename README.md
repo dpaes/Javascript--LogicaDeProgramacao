@@ -1,3 +1,3 @@
 # Javascript--LogicaDeProgramacao
 
-Exercicios de Lógica de Programação em Javascript da Onebitcode.
+Exercicios de Javascript da Onebitcode sobre Lógica de Programação.
