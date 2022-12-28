@@ -6,7 +6,7 @@ let opcao = '';
 
 while(opcao != 3){
 
-    alert('Valor em conta atual: R$' + moneyInitial)
+    alert('Valor disponível atual: R$' + moneyInitial)
 
     opcao = parseInt(prompt('Digite um numero referente a ação desejada:\n1-Adicionar dinheiro\n2-Remover dinheiro\n3-Sair'));
 
@@ -16,7 +16,11 @@ while(opcao != 3){
             moneyInitial += money;
             break;
         case 2:
-
+            money = parseInt(prompt('Qual a quantidade que será removida?'))
+            moneyInitial -= money;
+            break;
+        case 3:
+            alert('Saindo...')
             break;
     
         default:
