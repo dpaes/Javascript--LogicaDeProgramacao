@@ -1,4 +1,46 @@
+let pacientes = [];
 
+let indice = 0;
+
+let opcao = 0;
+
+do{
+    let paciente = ''
+
+    opcao = parseFloat(prompt(`
+    - Bem vindo ao consultorio medico ficticio -
+
+    Pacientes: ${pacientes}
+
+    Menu: 
+    1- Novo Paciente
+    2- Consultar Paciente
+    3- Sair
+`))
+
+    switch(opcao){
+        case 1:
+            indice++
+            /* if(indice > 1){
+                paciente = prompt('Digite o nome do Paciente:');
+                pacientes.push(`, ${indice}º ${paciente}`);
+            } else { */
+                paciente = prompt('Digite o nome do Paciente:');
+                pacientes.push(` ${indice}º ${paciente}`);
+            /* } */
+        break;
+        case 2:
+            let consultaPaciente = pacientes.shift();
+            alert(`Paciente a ser consultado: ${consultaPaciente}`)
+        break;
+        case 3:
+            alert('Saindo...')
+        break;
+        default:
+            alert('Escolha uma das opções apresentadas!')
+        break;
+    }
+} while(opcao != '3')
 
 /* Escreva um programa em javascript para simular uma fila de espera
 em um consultório médico. 
