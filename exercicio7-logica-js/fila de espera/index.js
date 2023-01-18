@@ -21,13 +21,8 @@ do{
     switch(opcao){
         case 1:
             indice++
-            /* if(indice > 1){
-                paciente = prompt('Digite o nome do Paciente:');
-                pacientes.push(`, ${indice}º ${paciente}`);
-            } else { */
-                paciente = prompt('Digite o nome do Paciente:');
-                pacientes.push(` ${indice}º ${paciente}`);
-            /* } */
+            paciente = prompt('Digite o nome do Paciente:');
+            pacientes.push(` ${indice}º ${paciente}`);
         break;
         case 2:
             let consultaPaciente = pacientes.shift();

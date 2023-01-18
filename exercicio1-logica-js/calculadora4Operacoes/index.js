@@ -1,7 +1,9 @@
 let num = parseFloat(prompt('Digite o primeiro número: '))
 let num2 = parseFloat(prompt('Digite o segundo número: '))
 
-let opcao = parseFloat(prompt('Digite qual operação deseja fazer, sendo: \n1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão'))
+let opcao = parseFloat(prompt(
+'Digite qual operação deseja fazer, sendo: \n1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão'
+))
 
 switch (opcao) {
     case 1:

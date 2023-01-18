@@ -5,7 +5,9 @@ let opcao = ''
 
 while(opcao != 5){
 
-    opcao = parseFloat(prompt('Escolha uma das opções do menu:\n1-primeira\n2-segunda\n3-terceira\n4-quarta\n5-encerrar'));
+    opcao = parseFloat(prompt(
+    'Escolha uma das opções do menu:\n1-primeira\n2-segunda\n3-terceira\n4-quarta\n5-encerrar'
+    ));
 
     switch (opcao) {
         case 1:

@@ -8,7 +8,9 @@ while(opcao != 3){
 
     alert('Valor disponível atual: R$' + moneyInitial)
 
-    opcao = parseInt(prompt('Digite um numero referente a ação desejada:\n1-Adicionar dinheiro\n2-Remover dinheiro\n3-Sair'));
+    opcao = parseInt(prompt(
+    'Digite um numero referente a ação desejada:\n1-Adicionar dinheiro\n2-Remover dinheiro\n3-Sair'
+    ));
 
     switch (opcao) {
         case 1:

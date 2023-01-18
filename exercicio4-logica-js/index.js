@@ -7,7 +7,8 @@ let perguntaVisitou = prompt('Você já visitou alguma cidade? (S/N)');
 
 if(perguntaVisitou == 'N' || perguntaVisitou == 'n'){
 
-    alert('Nome do turista: ' + nome + '\nCidades Visitadas: ' + cidadesVisitadas + '\nCidades: Nenhuma');
+    alert('Nome do turista: ' + nome + '\nCidades Visitadas: ' +
+    cidadesVisitadas + '\nCidades: Nenhuma');
 
 } else if( perguntaVisitou == 's' || perguntaVisitou == 'S'){
 
@@ -31,7 +32,8 @@ if(perguntaVisitou == 'N' || perguntaVisitou == 'n'){
 
             cidades += '.';
 
-            alert('Nome do turista: ' + nome + '\nCidades Visitadas: ' + cidadesVisitadas + '\nCidades: ' + cidades);
+            alert('Nome do turista: ' + nome + '\nCidades Visitadas: '
+            + cidadesVisitadas + '\nCidades: ' + cidades);
 
         }
 
