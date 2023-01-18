@@ -1,4 +1,129 @@
+let vagas = []
 
+function executar() {
+    let opcao = '';
+
+    do {
+
+        opcao = menu()
+    
+        switch (opcao) {
+            case '1':
+                listarVagas()
+            break;
+            case '2':
+                criarVaga()
+            break;
+            case '3':
+                visualizarVaga()
+            break;
+            case '4':
+                inscreverCandidato()
+            break;
+            case '5':
+                excluirVaga()
+            break;
+            case '6':
+                alert('Saindo...')
+            break;
+            default:
+            alert('Selecione uma das opções apresentadas!')
+            break;
+        }
+    
+    } while (opcao != '6');
+}
+
+function menu() {
+    const opcao = prompt(' - Bem Vindo ao Vagas de Emprego - \n' + 
+    'Menu:\n' + 
+    '1- Listar Vagas Disponíveis\n' +
+    '2- Criar Nova Vaga\n' +
+    '3- Visualizar uma Vaga\n' +
+    '4- Inscrever Candidato a uma Vaga\n' +
+    '5- Excluir uma Vaga\n' +
+    '6- Sair')
+
+    return opcao
+}
+
+function listarVagas() {
+    const vagasEmTexto = vagas.reduce((textoFinal, vaga, indice) => {
+        textoFinal += indice + '. '
+        textoFinal += vaga.nomeVaga
+        textoFinal += ' (' + vaga.candidatos.length + ' candidatos)\n'
+        return textoFinal
+    }, '')
+
+    alert(vagasEmTexto)
+}
+
+function criarVaga() {
+
+    nomeVaga = prompt('Digite o nome da vaga:')
+    descricaoVaga = prompt('Digite uma descrição para a vaga:')
+    dataLimiteVaga = prompt('Digite a data limite para a vaga:')
+
+    const confirmacao = confirm('Tem certeza de que deseja criar esta vaga?' +
+    '\nNome da vaga: ' + nomeVaga +
+    '\nDescrição: ' + descricaoVaga +
+    '\nData limite: ' + dataLimiteVaga)
+
+    if(confirmacao){
+        const vaga = { nomeVaga, descricaoVaga, dataLimiteVaga, candidatos: [] }
+        vagas.push(vaga)
+        alert('Vaga incluida com sucesso!')
+    } else {
+        alert('Voltando ao menu...')
+    }
+}
+
+function visualizarVaga() {
+    const indice = prompt('Digite qual o indice da vaga:')
+    const vaga = vagas[indice]
+
+    const candidatosEmTexto = vaga.candidatos.reduce((textoFinal,candidato) => {
+        return textoFinal + '\n - ' + candidato
+    }, '');
+
+    alert('Vaga Nº ' + indice +
+    '\nNome: ' + vaga.nomeVaga + 
+    '\nDescrição: ' + vaga.descricaoVaga +
+    '\nData Limite: ' + vaga.dataLimiteVaga +
+    '\nQuantidade Candidatos: ' + vaga.candidatos.length +
+    '\nCandidatos Inscritos: ' + candidatosEmTexto)
+}
+
+function inscreverCandidato() {
+    const candidato = prompt('Informe o nome do Candidato:')
+    const indice = prompt('Informe o indice da vaga em que o mesm deseja se inscrever:')
+    const vaga = vagas[indice]
+
+    const confirmacao = confirm('Deseja inscrever o candidato ' + candidato + ' na vaga ' + indice + '?\n' +
+    'Nome: ' + vaga.nomeVaga + '\nDescrição: ' + vaga.descricaoVaga + '\nData Limite: ' + vaga.dataLimiteVaga)
+
+    if(confirmacao){
+        vaga.candidatos.push(candidato)
+        alert('Inscrição concluida com sucesso!')
+    } else {
+        alert('Voltando ao menu...')
+    }
+}
+
+function excluirVaga() {
+    const indice = prompt('Informe o indice da vaga que deseja excluir:')
+    const vaga = vagas[indice]
+
+    const confirmacao = confirm('Tem certeza que deseja excluir a vaga ' + indice + '?\n' +
+    'Nome: ' + vaga.nomeVaga + '\nDescrição: ' + vaga.descricaoVaga + '\nData Limite: ' + vaga.dataLimiteVaga)
+
+    if(confirmacao){
+        vagas.splice(indice, 1)
+        alert('Vaga excluida com sucesso!')
+    }
+}
+
+executar()
 
 /* Escreva um programa em javascript que simule um sistema de vagas de emprego, 
 onde é possível gerenciar as vagas e adicionar candidatos às vagas. 
